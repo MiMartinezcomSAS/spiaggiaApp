@@ -1,0 +1,192 @@
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body,html{
+    height: 100%;
+    width: 100%;
+}
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#E4E4E4;
+    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #A7A7A7),
+        color-stop(0.51, #E4E4E4)
+    );
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    text-transform:uppercase;
+    width:100%;
+}
+figure,ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#content-page{
+    height: 100%;
+}
+.wrap-back{
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: -10000;
+}
+
+/*
+| Home
+*/
+.logo{
+    margin: -150px -116px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+}
+.sliderHome, .slider {
+    display: block;
+    position: relative;
+    height: 100%!important;
+    overflow: hidden!important;
+    width: 100%!important;
+}
+.sliderHome .slides,
+.sliderHome .slides li,
+.slider .slides,
+.slider .slides li{
+    width: 100%!important;
+    height: 100%!important;
+}
+
+.sliderHome .slides img,
+.slider .slides img{
+    min-height: 100%;
+    min-width: 100%;
+    max-width: 10000%!important;
+    margin: 0 auto!important;
+}
+.sliderHome .slides  img {
+    -webkit-filter: blur(3px);
+    transform: scale(1.5);
+
+}
+/*
+| Nav
+*/
+nav{
+    margin: 0 -40%;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 80%;
+}
+nav li{
+    background: black;
+    color: white;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    padding: 10px;
+    width: 90%;
+}
+/*
+| Slide
+*/
+.content-text{
+    height: 40%;
+    order: 2;
+    width: 100%;
+}
+.content-text h1{
+    margin: 10px 0;
+    text-align: center;
+    width: 100%;
+}
+.content-slide{
+    background: yellow;
+    height: 60%;
+    order: 1;
+    width: 100%;
+}
+.wrap-slide{
+    color: white;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    height: 100%;
+    width: 100% ;
+}
+#wrap-text{
+    position: relative;
+    padding: 0;
+    /* Prevent native touch events on Windows */
+    -ms-touch-action: none;
+
+    /* Prevent the callout on tap-hold and text selection */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    /* Prevent text resize on orientation change, useful for web-apps */
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -o-text-size-adjust: none;
+    text-size-adjust: none;
+}
+#wrap-text p{
+    font-size: 12px;
+    padding: 0 12px;
+    text-align: justify;
+}
+#wrap-text p:first-child{
+    margin-top: 0;
+}
+@media (min-width: 400px) {
+    .logo {
+        margin-top: -90px;
+    }
+
+    nav {
+        margin: 15px -45%;
+        width: 90%;
+    }
+
+    nav li {
+        font-size: 13px;
+        margin: 0 0 0 5px;
+        width: 23%;
+    }
+
+    .content-text {
+        height: 100%;
+        order: 1;
+        width: 40%;
+    }
+
+    .content-slide {
+        height: 100%;
+        order: 2;
+        width: 60%;
+    }
+    .wrap-slide{
+        -webkit-flex-direction: row;
+    }
+}
