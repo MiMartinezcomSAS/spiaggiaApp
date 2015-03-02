@@ -53,9 +53,22 @@ function menu(opcion){
     var fn = window[opcion];
     fn();
 }
+function home(){
+    var body = document.getElementsByTagName('body')[0];
+    body.className = '';
+
+}
 function slide(){
-    var screenH =  screen.height-70;
-    document.getElementById('wrap-text').style.height = screenH+"px";
+    var screenH,
+        body = document.getElementsByTagName('body')[0];
+    body.className = 'blur';
+    if(screen.width > 400){
+        screenH =  screen.height-70;
+        document.getElementById('wrap-text').style.height = screenH + "px";
+    }else{
+        screenH =  screen.height * .4 - 70;
+        document.getElementById('wrap-text').style.height = screenH + "px";
+    }
     new iScroll('wrap-text', { hideScrollbar: true });
     if ($('.slider').length > 0) {
         $('.slider').flexslider({
@@ -65,3 +78,24 @@ function slide(){
         });
     }
 }
+function menuButton(){
+    var $slide = $('.slideNav');
+    if($slide.hasClass('open')){
+        $slide.removeClass('open')
+    }else{
+        $slide.addClass('open')
+        console.log('r')
+    }
+}
+$( window ).resize(function() {
+
+    var screenH;
+    if(screen.width > 400){
+        screenH =  screen.height-70;
+        document.getElementById('wrap-text').style.height = screenH + "px";
+    }else{
+        screenH =  screen.height * .4 - 70;
+        document.getElementById('wrap-text').style.height = screenH + "px";
+    }
+    new iScroll('wrap-text', { hideScrollbar: true });
+});

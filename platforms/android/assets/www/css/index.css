@@ -79,7 +79,7 @@ figure,ul{
     max-width: 10000%!important;
     margin: 0 auto!important;
 }
-.sliderHome .slides  img {
+.blur .sliderHome .slides  img {
     -webkit-filter: blur(3px);
     transform: scale(1.5);
 
@@ -87,7 +87,7 @@ figure,ul{
 /*
 | Nav
 */
-nav{
+nav.navHome{
     margin: 0 -40%;
     left: 50%;
     position: absolute;
@@ -95,7 +95,7 @@ nav{
     top: 50%;
     width: 80%;
 }
-nav li{
+nav.navHome li{
     background: black;
     color: white;
     display: inline-block;
@@ -104,6 +104,44 @@ nav li{
     padding: 10px;
     width: 90%;
 }
+nav.open{
+    right: 0 !important;
+}
+nav.slideNav{
+    position: fixed;
+    right: -131px;
+    top: 0;
+    z-index: 1000;
+    -webkit-transition: .4s ease-in-out;
+}
+nav.slideNav ul{
+    background: black;
+    color: white;
+    display: inline-block;
+    height: 100%;
+    margin-left: -4px;
+    padding: 10px;
+}
+nav.slideNav ul li{
+    margin: 10px 0;
+    font-size: 16px;
+}
+.menu{
+    background: black;
+    display: inline-block;
+    text-align: center;
+    padding: 2px 3px;
+    vertical-align: top;
+}
+.menu span{
+    background: white;
+    border-radius: 10px;
+    display: block;
+    height: 3px;
+    margin: 4px 2px;
+    width: 25px;
+}
+
 /*
 | Slide
 */
@@ -164,12 +202,12 @@ nav li{
         margin-top: -90px;
     }
 
-    nav {
+    nav.navHome {
         margin: 15px -45%;
         width: 90%;
     }
 
-    nav li {
+    nav.navHome li {
         font-size: 13px;
         margin: 0 0 0 5px;
         width: 23%;
